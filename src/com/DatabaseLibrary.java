@@ -5,6 +5,7 @@ import com.resources.TableInfo;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
 import java.sql.*;
@@ -110,6 +111,7 @@ public final class DatabaseLibrary {
         String sql = "";
         switch (tablename) {
             case "uganda.person":
+                paramlist.subList(4, paramlist.size()).clear();
                 isOK = ArgumentsControl.isPersonOK(paramlist);
                 sql = "INSERT INTO " + tablename + " (Name, Surname, Height, Weight) VALUES (";
                 break;
@@ -166,7 +168,7 @@ public final class DatabaseLibrary {
             try {
                 System.out.println("Creating add statement...");
                 //sql = sql + "INSERT INTO "+ tablename + " (...) "+"VALUES ("; //!!!!!!!!!!!!!!!!!!!!!
-
+                System.out.println(paramlist.size());
                 for (int i = 0; i < paramlist.size(); i++) {
                     if (i == 0) {
                         sql = sql + "'" + paramlist.get(i) + "'";
@@ -175,7 +177,7 @@ public final class DatabaseLibrary {
                     }
                 }
                 sql = sql + ")";
-
+                System.out.println(sql);
                 stmt.executeUpdate(sql);
 
             } catch (SQLException se) {
@@ -186,10 +188,12 @@ public final class DatabaseLibrary {
     }
 
     public static void Update(Statement stmt, String tablename, List<String> paramlist) {
+        System.out.println("JEST UPDATE");
         String sql = "";
         List<String> columnInfo = null;
         switch (tablename) {
             case "uganda.person":
+                System.out.println("JEST PERSON");
                 sql = "UPDATE " + tablename + " SET ";
                 columnInfo = TableInfo.personTable;
                 break;
@@ -230,14 +234,54 @@ public final class DatabaseLibrary {
                 columnInfo = TableInfo.vehicleTable;
                 break;
         }
-        for (int i = 0; i < paramlist.size(); i++) {
-            if (paramlist.get(i) != "") {   //Powiedzieć o tym Krzysztofowi!!!!!!!!!!!!!!!
+        for (int i = 1; i < paramlist.size(); i++) {
+            //if (paramlist.get(i) != "") {                           //Powiedzieć o tym Krzysztofowi!!!!!!!!!!!!!!!
+            if (!(paramlist.get(i).isEmpty())) {
                 sql = sql + columnInfo.get(i) + " = " + "'" + paramlist.get(i) + "'";
                 if (i < paramlist.size() - 1) {
-                    sql = sql + ",";
+                    sql = sql + ", ";
                 }
             }
         }
+        sql = sql.substring(0, sql.length()-2);
         sql = sql + " WHERE " + columnInfo.get(0) + " = " + paramlist.get(0);
+        System.out.println(sql);
+        try {
+            stmt.executeUpdate(sql);
+        }catch (SQLException se) {
+            System.out.println("Update failure ...");
+            se.printStackTrace();
+        }
+    }
+
+
+    public static void Select(List<String> columns, Statement stmt, String tablename) {
+        String sql = "SELECT ";
+        for (int i = 0; i < columns.size(); i++) {
+            if (i == columns.size() - 1) {
+                sql = sql + columns.get(i);
+            } else {
+                sql = sql + columns.get(i) + ", ";
+            }
+        }
+        sql = sql + " FROM " + tablename;
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            JTable table = new JTable(DatabaseLibrary.buildTableModel(rs));
+            rs.close();
+            JScrollPane scrollPane = new JScrollPane(table);
+            Runnable thread = new Runnable() {
+                @Override
+                public void run() {
+                    TableDialog tableDialog = new TableDialog(scrollPane);
+                }
+            };
+            SwingUtilities.invokeLater(thread);
+
+
+        } catch (SQLException se) {
+            System.out.println("Select failure ...");
+            se.printStackTrace();
+        }
     }
 }

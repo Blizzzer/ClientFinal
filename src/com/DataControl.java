@@ -22,7 +22,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Person_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -30,7 +30,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.soldier":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Soldier_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -38,7 +38,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Soldier_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -46,7 +46,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.commander":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Commander_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -54,7 +54,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Commander_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -62,7 +62,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.engineer":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Engineer_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -70,7 +70,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Engineer_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -78,7 +78,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.marksman":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Marksman_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -86,7 +86,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Marksman_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -94,7 +94,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.tanker":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Tanker_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -102,7 +102,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Tanker_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -110,7 +110,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.medic":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Medic_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -118,7 +118,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Medic_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -126,7 +126,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.equipment":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Equipment_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -134,7 +134,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Equipment_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -142,7 +142,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.weapon":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Weapon_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -150,7 +150,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Weapon_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -158,7 +158,7 @@ public final class DataControl {
                 }
                 break;
             case "uganda.vehicle":
-                sql = "SELECT Person_ID FROM " + tablename;
+                sql = "SELECT Vehicle_ID FROM " + tablename;
                 try {
                     ResultSet rs = stmt.executeQuery(sql);
 
@@ -166,7 +166,7 @@ public final class DataControl {
                     while (rs.next()) {
                         idlist.add(rs.getInt("Vehicle_ID"));
                     }
-                    return idlist.indexOf(id)==-1;
+                    return !(idlist.indexOf(id)==-1);
 
                 }catch (SQLException se) {
                     System.out.println("Czapek na peronie"); //Gdy połączenie nie udane.
@@ -179,6 +179,7 @@ public final class DataControl {
                 paramlist.subList(3, paramlist.size()).clear();
                 break;*/
         }
+
         return false;
     }
 

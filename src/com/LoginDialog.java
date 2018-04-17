@@ -20,17 +20,40 @@ public class LoginDialog extends JFrame implements WindowListener {
     private String serverName = null;
     private String mydatabase = null;
 
+    public String getUrl() {
+        return url;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     private String url = null; //zwrócić
     private String username = null; //zwrócić
     private String password = null; //zwrócić
 
     LoginDialog() {
         JPanel mainPanel = new JPanel();
-        mainPanel.setPreferredSize(new Dimension(300, 160));
+        mainPanel.setPreferredSize(new Dimension(300, 180));
         GroupLayout mainLayout = new GroupLayout(mainPanel);
         mainLayout.setAutoCreateGaps(true);
         mainLayout.setAutoCreateContainerGaps(true);
-
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+        SwingUtilities.updateComponentTreeUI(this);
         JLabel loginLabel = new JLabel( "Login:" );
         JLabel passwordLabel = new JLabel( "Password:" );
         JLabel serverLabel = new JLabel( "Server IP:" );

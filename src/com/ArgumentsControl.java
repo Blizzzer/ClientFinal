@@ -16,9 +16,12 @@ public final class ArgumentsControl {
         for(int i=0; i<c.length; i++){
             System.out.println(c[i]);
         }
-        WarningDialogGenerator.personWarning(c);
         System.out.println(c[0]&&c[1]&&c[2]&&c[3]&&c[4]&&c[5]);
-        return c[0]&&c[1]&&c[2]&&c[3]&&c[4]&&c[5];
+        if(c[0]&&c[1]&&c[2]&&c[3]&&c[4]&&c[5]){
+            return true;
+        }
+        WarningDialogGenerator.personWarning(c);
+        return false;
     }
 
     public static boolean isSoldierOK(Statement stmt, List<String> paramlist){
@@ -32,9 +35,12 @@ public final class ArgumentsControl {
         c[6]=DataControl.CheckIfIDExists(stmt, "uganda.soldier", Integer.parseInt(paramlist.get(4)));
         c[7]=!DataControl.CheckIfIDExists(stmt, "uganda.soldier", Integer.parseInt(paramlist.get(0)));
         c[8]=!DataControl.CheckIfIDExists(stmt, "uganda.commander", Integer.parseInt(paramlist.get(0)));
+        for(int i=0; i<c.length; i++){
+            System.out.println(c[i]);
+        }
         if(c[0]&&c[1]&&c[2]&&c[3]&&c[4]&&c[5]&&c[6]&&c[7]&&c[8])
             return true;
-            WarningDialogGenerator.soldierWarning(c);
+        WarningDialogGenerator.soldierWarning(c);
         return false;
     }
 
@@ -47,7 +53,7 @@ public final class ArgumentsControl {
         c[4]=!DataControl.CheckIfIDExists(stmt, "uganda.commander", Integer.parseInt(paramlist.get(0)));
         if(c[0]&&c[1]&&c[2]&&c[3]&&c[4])
             return true;
-            WarningDialogGenerator.commanderWarning(c);
+        WarningDialogGenerator.commanderWarning(c);
         return false;
     }
 

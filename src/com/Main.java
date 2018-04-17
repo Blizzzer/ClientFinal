@@ -8,7 +8,9 @@ public class Main {
 
 
     public static void main(String[] args) throws InterruptedException {
-
+        //String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
+        //private String username = "JAVA";
+        //private String password = "papanurgle";
         UI app;
         LoginDialog loginDialog;
 
@@ -20,10 +22,10 @@ public class Main {
         if(loginDialog.isLogged()) {
             loginDialog.setVisible(false);
             loginDialog.setEnabled(false);
-            app = new UI();
+            app = new UI(/*loginDialog.getUrl(),loginDialog.getUsername(),loginDialog.getPassword()*/);
             app.setVisible(true);
 
-            while (true) { //app.getrunning()
+            while (app.getrunning()) { //app.getrunning()
                 TimeUnit.SECONDS.sleep(1);
             }
         }
