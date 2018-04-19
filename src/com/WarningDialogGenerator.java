@@ -8,7 +8,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + personString[i];
+                problemString = problemString +", "+ personString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblem occurred in: " + problemString,
@@ -20,7 +20,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + soldierString[i];
+                problemString = problemString +", "+ soldierString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,
@@ -32,7 +32,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + commanderString[i];
+                problemString = problemString +", "+ commanderString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,
@@ -44,7 +44,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + engineerString[i];
+                problemString = problemString +", "+ engineerString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,
@@ -56,7 +56,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + marksmanString[i];
+                problemString = problemString +", "+ marksmanString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,
@@ -68,7 +68,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + tankerString[i];
+                problemString = problemString +", "+ tankerString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,
@@ -81,7 +81,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + medicString[i];
+                problemString = problemString +", "+ medicString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,
@@ -93,7 +93,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + equipmentString[i];
+                problemString = problemString +", "+ equipmentString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,
@@ -105,7 +105,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + vehicleString[i];
+                problemString = problemString +", "+ vehicleString[i];
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,
@@ -117,7 +117,7 @@ public final class WarningDialogGenerator { //TODO Nie sklejanie tekstów
         String problemString = "";
         for(int i =0; i< c.length; i++){
             if(!c[i])
-                problemString = problemString + weaponString[i] + " ";
+                problemString = problemString +", "+ weaponString[i] + " ";
         }
         JOptionPane.showMessageDialog(null,
                 "Wrong data input \nPlease correct entered data\nProblems: " + problemString,

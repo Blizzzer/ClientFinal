@@ -15,7 +15,7 @@ public class UI extends JFrame implements WindowListener {
     private TextArea informationAddLabel;
     private Connection conn = null;
     private Statement stmt = null;
-    private String serverName = "192.168.0.17";
+    private String serverName = "localhost";
     private String mydatabase = "uganda";
     private String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
 
@@ -67,7 +67,7 @@ public class UI extends JFrame implements WindowListener {
         rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
         mainPanel.add(rightPanel);
 
-        JButton testButton = new JButton("Test Select");
+        /*JButton testButton = new JButton("Test Select");
         testButton.addActionListener(new ActionListener() {
 
             @Override
@@ -96,7 +96,7 @@ public class UI extends JFrame implements WindowListener {
             }
 
         });
-        mainPanel.add(testButton);
+        mainPanel.add(testButton);*/
 
 
 
@@ -650,7 +650,7 @@ public class UI extends JFrame implements WindowListener {
         this.pack();
         this.setVisible(true);
 
-
+        DatabaseLibrary.playSound();
         try {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();

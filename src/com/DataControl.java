@@ -205,10 +205,10 @@ public final class DataControl {
         return com.resources.RestrictedValuesStrings.soldierRank.contains(value);
     }
     public static boolean isWeaponCaliber (String value){
-        return com.resources.RestrictedValuesStrings.equipmentType.contains(value);
+        return com.resources.RestrictedValuesStrings.weaponCaliber.contains(value);
     }
     public static boolean isEquipmentType (String value){
-        return com.resources.RestrictedValuesStrings.weaponCaliber.contains(value);
+        return com.resources.RestrictedValuesStrings.equipmentType.contains(value);
     }
     public static boolean isFuelType (String value){
         return com.resources.RestrictedValuesStrings.fuelType.contains(value);

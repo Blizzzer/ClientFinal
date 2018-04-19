@@ -20,7 +20,7 @@ public final class AddInformationStrings {
     public static String equipmentInformationText = "New equipment creation \nRestrictions: \n" +
             "Type: Must be one of: AR (Assault rifle),SG (Submachine Pistol)" +
             ",SR (Sniper Rifle) or TK (Tank)\n" +
-            "Production Date: Must be date written like XX-XX-XXXX\n" +
+            "Production Date: Must be date written like YYYY-MM-DD\n" +
             "Owner_ID: Must be numeric value belonging to IDs in Soldier table";
 
     public static String marksmanInformationText = "Soldier to marksman upgrade \nRestrictions: \n" +

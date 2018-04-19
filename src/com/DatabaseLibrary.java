@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Vector;
 
 public final class DatabaseLibrary {
-    public void playSound() { //TODO Button and filename correction
+    public static void playSound() { //TODO Button and filename correction
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("D:/MusicPlayer/fml.mp3").getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("C:\\Users\\kapol\\Desktop\\music.wav").getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
